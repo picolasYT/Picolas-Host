@@ -19,22 +19,15 @@
       min-height: 100vh;
     }
 
-    /* HEADER SIMPLE */
     header {
-      display: flex;
-      align-items: center;
       padding: 20px 40px;
     }
 
     header h1 {
       font-size: 20px;
       font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
-    /* HERO */
     .hero {
       min-height: calc(100vh - 80px);
       display: flex;
@@ -51,7 +44,6 @@
     .hero h2 {
       font-size: clamp(42px, 6vw, 72px);
       font-weight: 800;
-      line-height: 1.1;
       margin-bottom: 20px;
     }
 
@@ -62,10 +54,9 @@
     .hero p {
       font-size: 18px;
       opacity: 0.9;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
-    /* BOTÓN */
     .hero a {
       display: inline-block;
       padding: 14px 28px;
@@ -74,15 +65,28 @@
       font-weight: 600;
       border-radius: 999px;
       text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .hero a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    /* ANUNCIO */
+    .ad-container {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      min-height: 90px;
     }
 
-    /* FOOTER MINIMAL */
+    /* ALERTA ADBLOCK */
+    .adblock-warning {
+      display: none;
+      margin-top: 30px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      background: rgba(255, 80, 80, 0.15);
+      border: 1px solid rgba(255, 80, 80, 0.4);
+      font-size: 14px;
+      color: #ffdede;
+    }
+
     footer {
       text-align: center;
       font-size: 12px;
@@ -100,34 +104,54 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h2>
-        Construye tu <span>mundo</span>
-      </h2>
-      <p>
-        Alojamiento de servidores de alto rendimiento para Minecraft y bots.
-      </p>
+      <h2>Construye tu <span>mundo</span></h2>
+      <p>Alojamiento de servidores de alto rendimiento para Minecraft y bots.</p>
 
-      <!-- BOTÓN PRINCIPAL -->
-      <a href="http://192.168.0.58">
-        Comenzar
-      </a>
+      <a href="http://192.168.0.58">Comenzar</a>
 
-      <script>
-  atOptions = {
-    'key' : 'f84e24040b0f7aec98a908a73d7f7a85',
-    'format' : 'iframe',
-    'height' : 90,
-    'width' : 728,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/f84e24040b0f7aec98a908a73d7f7a85/invoke.js"></script>
+      <!-- ADBLOCK WARNING -->
+      <div class="adblock-warning" id="adblockWarning">
+        ⚠️ Detectamos que usás AdBlock.  
+        Los anuncios nos ayudan a mantener el hosting gratuito ❤️  
+        Considerá desactivarlo para apoyar el proyecto.
+      </div>
+
+      <!-- ADSTERRA -->
+      <div class="ad-container">
+        <script>
+          atOptions = {
+            'key' : 'f84e24040b0f7aec98a908a73d7f7a85',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/f84e24040b0f7aec98a908a73d7f7a85/invoke.js"></script>
+      </div>
+
     </div>
   </section>
 
   <footer>
     © 2026 Picolas Host — Comunidad
   </footer>
+
+  <!-- ADBLOCK DETECTOR -->
+  <script>
+    // elemento carnada
+    const bait = document.createElement('div');
+    bait.className = 'adsbox';
+    bait.style.height = '1px';
+    document.body.appendChild(bait);
+
+    setTimeout(() => {
+      if (bait.offsetHeight === 0) {
+        document.getElementById('adblockWarning').style.display = 'block';
+      }
+      bait.remove();
+    }, 500);
+  </script>
 
 </body>
 </html>
