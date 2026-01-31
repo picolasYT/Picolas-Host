@@ -1,27 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Picolas Host — Servidores Gratis</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>Picolas Host</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: radial-gradient(circle at top, #3b4150, #0f1117);
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    /* HEADER SIMPLE */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero h2 {
+      font-size: clamp(42px, 6vw, 72px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 span {
+      color: #d6c27a;
+    }
+
+    .hero p {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 40px;
+    }
+
+    /* BOTÓN */
+    .hero a {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #ffffff;
+      color: #000;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .hero a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* FOOTER MINIMAL */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.5;
+      padding: 20px;
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif;background:#0f0f0f;color:#fff;text-align:center">
 
-  <h1>🚀 Picolas Host</h1>
-  <p>Servidores Minecraft y Bots gratuitos 24/7</p>
+<body>
 
-  <!-- ANUNCIO ADSTERRA (BANNER) -->
-  <div style="margin:20px auto">
-    <!-- PEGÁS ACÁ EL SCRIPT DE ADSTERRA -->
-  </div>
+  <header>
+    <h1>🟩 Picolas Host</h1>
+  </header>
 
-  <a href="http://192.168.0.58" style="display:inline-block;padding:12px 20px;background:#00ff88;color:#000;text-decoration:none;border-radius:8px">
-    👉 Entrar al Panel
-  </a>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>
+        Construye tu <span>mundo</span>
+      </h2>
+      <p>
+        Alojamiento de servidores de alto rendimiento para Minecraft y bots.
+      </p>
 
-  <p style="margin-top:40px;font-size:12px;opacity:.6">
-    Hosting comunitario — Donaciones bienvenidas
-  </p>
+      <!-- BOTÓN PRINCIPAL -->
+      <a href="http://192.168.0.58">
+        Comenzar
+      </a>
+
+      <!-- ACÁ PODÉS PONER ADSTERRA DESPUÉS -->
+      <!--
+      <div style="margin-top:40px">
+        SCRIPT DE ADSTERRA
+      </div>
+      -->
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Picolas Host — Comunidad
+  </footer>
 
 </body>
 </html>
